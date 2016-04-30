@@ -10,6 +10,10 @@
 
 <h1>Restaurants</h1>
 
+{% if not restaurants %}
+<p>You currently have no restaurants.</p>
+{% endif %}
+
 {% for restaurant in restaurants %}
 
 <div>
