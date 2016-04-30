@@ -1,10 +1,14 @@
 from flask import Flask, render_template
 app = Flask(__name__)
 
+#Fake Restaurants
+restaurant = {'name': 'The CRUDdy Crab', 'id': '1'}
+restaurants = [{'name': 'The CRUDdy Crab', 'id': '1'}, {'name':'Blue Burgers', 'id':'2'},{'name':'Taco Hut', 'id':'3'}]
+
 @app.route('/')
 @app.route('/restaurant')
 def showRestaurants():
-    return render_template('restaurants.html')
+    return render_template('restaurants.html', restaurants=restaurants)
 
 @app.route('/restaurant/new')
 def newRestaurant():
