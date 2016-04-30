@@ -1,14 +1,14 @@
-from flask import Flask
+from flask import Flask, render_template
 app = Flask(__name__)
 
 @app.route('/')
 @app.route('/restaurant')
 def showRestaurants():
-    return 'This page will show all my restaurants'
+    return render_template('restaurants.html')
 
 @app.route('/restaurant/new')
 def newRestaurant():
-    return 'This page will be for making a new restaurant'
+    return render_template('newRestaurant.html')
 
 @app.route('/restaurant/<int:restaurant_id>/edit')
 def editRestaurant(restaurant_id):
