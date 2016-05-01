@@ -31,9 +31,6 @@ def restaurantsJSON():
     restaurants = session.query(Restaurant).all()
     return jsonify(Restaurants=[i.serialize for i in restaurants])
 
-    restaurants = session.query(Restaurant).all()
-    return render_template('restaurants.html', restaurants=restaurants)
-
 @app.route('/restaurant/new', methods=['GET', 'POST'])
 def newRestaurant():
     if request.method == 'POST':
