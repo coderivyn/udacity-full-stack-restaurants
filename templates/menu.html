@@ -9,6 +9,16 @@
 
 <h1>{{restaurant.name}}</h1>
 
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+<ul>
+	{% for message in messages %}
+	<li><strong>{{message}} </strong></li>
+	{% endfor %}
+</ul>
+{% endif %}
+{% endwith %}
+
 {% if not items %}
 <p>You currently have no menu items.</p>
 {% endif %}
