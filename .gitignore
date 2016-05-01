@@ -1,0 +1,5 @@
+# compiled script (Bytecode)
+*.pyc
+
+# sqlite database
+*.db
