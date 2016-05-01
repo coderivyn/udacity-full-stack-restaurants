@@ -21,7 +21,7 @@ DBSession = sessionmaker(bind=engine)
 session = DBSession()
 
 @app.route('/')
-@app.route('/restaurant')
+@app.route('/restaurant/')
 def showRestaurants():
     restaurants = session.query(Restaurant).all()
     return render_template('restaurants.html', restaurants=restaurants)
