@@ -9,9 +9,36 @@
 <form action="#" method="post">
 <h1>Edit Menu Item</h1>
 
-<label>Name: <input type="text" name="name" value="{{item.name}}"></label>
-<input type="submit" value="Save"> <a href="#">Cancel</a>
+<label>
+<p>Name:</p>
+<p><input type="text" name="name" value="{{item.name}}"></p>
+</label>
+
+<label>
+<p>Description:</p>
+<p><input type="text" name="description" value="{{item.description}}"></p>
+</label>
+
+<label>
+<p>Price:</p>
+<p><input type="text" name="price" value="{{item.price}}"></p>
+</label>
+
+<label>
+<p>Course:</p>
+
+<input type="radio" name="course" value="Appetizer"{% if item.course == 'Appitizer' %} checked {% endif %}> Appetizer<br>
+<input type="radio" name="course" value="Entree"{% if item.course == 'Entree' %} checked {% endif %}> Entree<br>
+<input type="radio" name="course" value="Dessert"{% if item.course == 'Dessert' %} checked {% endif %}> Dessert<br>
+<input type="radio" name="course" value="Beverage"{% if item.course == 'Beverage' %} checked {% endif %}> Beverage
+
+</label>
+
+<p><input type="submit" value="Save"> <a href="#">Cancel</a></p>
+
 </form>
+
+
 </body>
 
 </html>
